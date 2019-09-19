@@ -1,5 +1,7 @@
 {
   "name": "ionic-playground",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
