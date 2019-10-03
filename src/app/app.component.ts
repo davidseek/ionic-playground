@@ -11,10 +11,7 @@ import {
 import {
   StatusBar
 } from '@ionic-native/status-bar/ngx';
-import {
-  HttpClient,
-  HttpHeaders
-} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-root',
@@ -25,8 +22,7 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private httpClient: HttpClient
+    private statusBar: StatusBar
   ) {
     this.initializeApp();
   }
@@ -35,15 +31,6 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-
-      this.httpClient.get('https://httpbin.org/image', {
-        headers: new HttpHeaders({
-          accept: 'image/*',
-        }),
-        responseType: 'blob'
-      }).subscribe((data) => {
-        console.log('Data', data);
-      });
     });
   }
 }
